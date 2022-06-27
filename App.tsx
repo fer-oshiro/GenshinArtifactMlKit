@@ -1,22 +1,16 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
- *
- * @format
- */
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { MyTabs } from './src/navigation/Navigator';
+import { ThemeProvider } from 'styled-components';
+import theme from './src/global/styles/theme';
 
-import React, {FC} from 'react';
-import 'react-native-gesture-handler';
-import {NavigationContainer} from '@react-navigation/native';
-import {Navigator} from './src/navigation/Navigator';
-
-export const App: FC = () => {
+export default function App() {
   return (
     <NavigationContainer>
-      <Navigator />
+      <ThemeProvider theme={theme}>
+        <MyTabs />
+      </ThemeProvider>
     </NavigationContainer>
   );
-};
+}
+

@@ -1,0 +1,7 @@
+{
+  "files.exclude": {
+    "__tests__": true,
+    "node_modules": true,
+    "ios": true
+  }
+}

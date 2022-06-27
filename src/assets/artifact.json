@@ -1,0 +1,333 @@
+{
+  "format": "GOOD",
+  "dbVersion": 18,
+  "source": "Genshin Optimizer",
+  "version": 1,
+  "characters": [
+    {
+      "key": "AratakiItto",
+      "level": 90,
+      "ascension": 6,
+      "hitMode": "avgHit",
+      "reactionMode": "",
+      "conditional": {},
+      "bonusStats": {},
+      "enemyOverride": {},
+      "talent": {"auto": 9, "skill": 9, "burst": 9},
+      "infusionAura": "",
+      "constellation": 0,
+      "team": ["", "", ""],
+      "compareData": false,
+      "favorite": false
+    }
+  ],
+  "artifacts": [
+    {
+      "setKey": "OceanHuedClam",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "goblet",
+      "mainStatKey": "pyro_dmg_",
+      "substats": [
+        {"key": "critRate_", "value": 9.7},
+        {"key": "critDMG_", "value": 6.2},
+        {"key": "enerRech_", "value": 4.5},
+        {"key": "eleMas", "value": 58}
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": false
+    },
+    {
+      "setKey": "HuskOfOpulentDreams",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "sands",
+      "mainStatKey": "def_",
+      "substats": [
+        {"key": "hp", "value": 598},
+        {"key": "atk_", "value": 15.2},
+        {"key": "enerRech_", "value": 11},
+        {"key": "hp_", "value": 9.9}
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": false
+    },
+    {
+      "setKey": "HuskOfOpulentDreams",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "plume",
+      "mainStatKey": "atk",
+      "substats": [
+        {"key": "critRate_", "value": 6.2},
+        {"key": "def", "value": 19},
+        {"key": "enerRech_", "value": 6.5},
+        {"key": "hp_", "value": 19.8}
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": false
+    },
+    {
+      "setKey": "HuskOfOpulentDreams",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "sands",
+      "mainStatKey": "atk_",
+      "substats": [
+        {"key": "critDMG_", "value": 11.7},
+        {"key": "def_", "value": 5.8},
+        {"key": "eleMas", "value": 35},
+        {"key": "enerRech_", "value": 16.8}
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": false
+    },
+    {
+      "setKey": "HuskOfOpulentDreams",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "flower",
+      "mainStatKey": "hp",
+      "substats": [
+        {"key": "def_", "value": 18.2},
+        {"key": "def", "value": 37},
+        {"key": "enerRech_", "value": 11},
+        {"key": "atk_", "value": 5.8}
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": false
+    },
+    {
+      "setKey": "CrimsonWitchOfFlames",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "flower",
+      "mainStatKey": "hp",
+      "substats": [
+        {"key": "atk_", "value": 14},
+        {"key": "enerRech_", "value": 15.5},
+        {"key": "critRate_", "value": 3.1},
+        {"key": "critDMG_", "value": 6.2}
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": false
+    },
+    {
+      "setKey": "HuskOfOpulentDreams",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "goblet",
+      "mainStatKey": "geo_dmg_",
+      "substats": [
+        {"key": "def", "value": 37},
+        {"key": "critDMG_", "value": 18.7},
+        {"key": "def_", "value": 10.9},
+        {"key": "critRate_", "value": 7.4}
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": false
+    },
+    {
+      "setKey": "HuskOfOpulentDreams",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "plume",
+      "mainStatKey": "atk",
+      "substats": [
+        {"key": "atk_", "value": 15.7},
+        {"key": "hp_", "value": 9.9},
+        {"key": "critRate_", "value": 6.6},
+        {"key": "eleMas", "value": 23}
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": false
+    },
+    {
+      "setKey": "HuskOfOpulentDreams",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "flower",
+      "mainStatKey": "hp",
+      "substats": [
+        {"key": "critRate_", "value": 2.7},
+        {"key": "atk_", "value": 9.9},
+        {"key": "critDMG_", "value": 19.4},
+        {"key": "atk", "value": 39}
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": false
+    },
+    {
+      "setKey": "HuskOfOpulentDreams",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "circlet",
+      "mainStatKey": "critRate_",
+      "substats": [
+        {"key": "def_", "value": 7.3},
+        {"key": "atk_", "value": 11.1},
+        {"key": "hp", "value": 956},
+        {"key": "def", "value": 23}
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": false
+    },
+    {
+      "setKey": "HuskOfOpulentDreams",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "sands",
+      "mainStatKey": "def_",
+      "substats": [
+        {"key": "atk_", "value": 22.2},
+        {"key": "critDMG_", "value": 7.8},
+        {"key": "def", "value": 19},
+        {"key": "critRate_", "value": 5.8}
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": false
+    },
+    {
+      "setKey": "HuskOfOpulentDreams",
+      "rarity": 5,
+      "level": 20,
+      "slotKey": "plume",
+      "mainStatKey": "atk",
+      "substats": [
+        {"key": "def", "value": 23},
+        {"key": "critRate_", "value": 6.6},
+        {"key": "def_", "value": 24.1},
+        {"key": "eleMas", "value": 23}
+      ],
+      "location": "",
+      "exclude": false,
+      "lock": false
+    }
+  ],
+  "weapons": [
+    {
+      "key": "WasterGreatsword",
+      "level": 1,
+      "ascension": 0,
+      "refinement": 1,
+      "location": "",
+      "lock": false
+    },
+    {
+      "key": "RedhornStonethresher",
+      "level": 90,
+      "ascension": 6,
+      "refinement": 1,
+      "location": "AratakiItto",
+      "lock": false
+    }
+  ],
+  "states": [
+    {
+      "editWeaponId": "",
+      "sortType": "level",
+      "ascending": false,
+      "rarity": [5, 4, 3, 2, 1],
+      "weaponType": ["sword", "claymore", "polearm", "bow", "catalyst"],
+      "key": "WeaponDisplay"
+    },
+    {"resin": 160, "date": 1656197785741, "key": "ToolsDisplayResin"},
+    {
+      "sortType": "level",
+      "ascending": false,
+      "weaponType": ["sword", "claymore", "polearm", "bow", "catalyst"],
+      "element": ["anemo", "geo", "electro", "hydro", "pyro", "cryo"],
+      "key": "CharacterDisplay"
+    },
+    {"equipmentPriority": [], "threads": 10, "key": "TabOptimize"},
+    {
+      "mora": 0,
+      "level": 1,
+      "curExp": 0,
+      "goUnder": false,
+      "books": {"advice": 0, "experience": 0, "wit": 0},
+      "key": "ToolDisplayExpCalc"
+    },
+    {
+      "filterOption": {
+        "artSetKeys": [],
+        "rarity": [5],
+        "levelLow": 0,
+        "levelHigh": 20,
+        "slotKeys": ["flower", "plume", "sands", "goblet", "circlet"],
+        "mainStatKeys": [],
+        "substats": [],
+        "location": "",
+        "exclusion": ["excluded", "included"],
+        "locked": ["locked", "unlocked"]
+      },
+      "ascending": false,
+      "sortType": "rarity",
+      "effFilter": [
+        "hp",
+        "hp_",
+        "atk",
+        "atk_",
+        "def",
+        "def_",
+        "eleMas",
+        "enerRech_",
+        "critRate_",
+        "critDMG_"
+      ],
+      "probabilityFilter": {},
+      "key": "ArtifactDisplay"
+    },
+    {
+      "artifactPage": false,
+      "buildPage": true,
+      "characterPage": true,
+      "key": "InfoShown"
+    },
+    {"tcMode": false, "key": "GlobalSettings"},
+    {"timeZoneKey": "America", "key": "ToolsDisplayTimezone"}
+  ],
+  "buildSettings": [
+    {
+      "artSetExclusion": {},
+      "statFilters": {},
+      "mainStatKeys": {"sands": [], "goblet": [], "circlet": []},
+      "optimizationTarget": ["normal", "0"],
+      "mainStatAssumptionLevel": 0,
+      "useExcludedArts": false,
+      "useEquippedArts": true,
+      "allowPartial": true,
+      "builds": [
+        ["artifact_9", "artifact_6", "artifact_8", "artifact_7", "artifact_10"],
+        ["artifact_9", "artifact_6", "artifact_8", "artifact_7", "artifact_3"],
+        [
+          "artifact_9",
+          "artifact_6",
+          "artifact_8",
+          "artifact_11",
+          "artifact_10"
+        ],
+        ["artifact_9", "artifact_6", "artifact_8", "artifact_11", "artifact_3"],
+        ["artifact_9", "artifact_0", "artifact_8", "artifact_7", "artifact_10"]
+      ],
+      "buildDate": 1656198999849,
+      "maxBuildsToShow": 5,
+      "plotBase": "",
+      "compareBuild": true,
+      "levelLow": 0,
+      "levelHigh": 20,
+      "key": "AratakiItto"
+    }
+  ]
+}
