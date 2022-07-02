@@ -1,7 +1,9 @@
 {
   "files.exclude": {
+    "*.*": true,
     "__tests__": true,
     "node_modules": true,
-    "ios": true
+    "ios": true,
+    "android": true,
   }
 }

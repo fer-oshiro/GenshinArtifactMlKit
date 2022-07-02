@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/Feather';
 export const Button = styled.Pressable`
   width: 50px;
   height: 50px;
-  background-color: ${({theme}) => theme.colors.main};
+  background-color: ${({theme}) => theme.colors.main_light};
   border-radius: 4px;
   display:flex;
   justify-content: center;
@@ -15,5 +15,5 @@ export const Button = styled.Pressable`
 export const IconStyle = styled(Icon)`
   font-size: 30px;
   text-align: center;
-  color: ${({theme}) => theme.colors.main_lighter};
+  color: ${({theme}) => theme.colors.background};
 `

@@ -3,7 +3,7 @@ import styled  from 'styled-components/native';
 export const Button = styled.Pressable`
   width: 50px;
   height: 50px;
-  background-color: ${({theme}) => theme.colors.main};
+  background-color: ${({theme}) => theme.colors.main_light};
   border-radius: 4px;
   display:flex;
   justify-content: center;
