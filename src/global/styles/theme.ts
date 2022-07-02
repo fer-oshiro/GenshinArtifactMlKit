@@ -9,5 +9,10 @@ export default {
 
     secondary: '#e0c1b3',
     secondary_light: '#F2DFD6',
+
+    god_tier: '#ea487e',
+    great: '#ede2b1',
+    okay: '#a5f7b7',
+    poor:'#9dceea'
   }
 }

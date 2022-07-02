@@ -18,10 +18,6 @@ import {
   Container,
   ItemContainer,
   MainTitle,
-  RankingContainer,
-  RankingItemContainer,
-  RankingTitle,
-  ResultTitle,
   SubstatsContainer,
   SubstatsTitle,
   Title,
@@ -45,7 +41,6 @@ export const ResponseRenderer = ({ text }: ResponseRendererProps) => {
   const {
     getResponse,
     handleRankingCalc,
-    resultRanking,
     setArtifactSet,
     setArtifactSlot,
     setArtifactStats,
@@ -130,10 +125,6 @@ export const ResponseRenderer = ({ text }: ResponseRendererProps) => {
   useEffect(() => {
     getResponse(text)
   }, [text])
-
-  useEffect(() => {
-    console.log('result', result)
-  }, [result])
 
   return (
     <Container>
@@ -240,36 +231,6 @@ export const ResponseRenderer = ({ text }: ResponseRendererProps) => {
 
       <Button onPress={handleRankingCalc}>Calcular e Salvar</Button>
 
-      <Container>
-        {!!resultRanking && (
-          <RankingContainer>
-            <RankingItemContainer>
-              <RankingTitle>CRIT Build </RankingTitle>
-              <ResultTitle>{resultRanking?.critBuild}</ResultTitle>
-            </RankingItemContainer>
-
-            <RankingItemContainer>
-              <RankingTitle>Energy Recharge</RankingTitle>
-              <ResultTitle>{resultRanking?.erBuild}</ResultTitle>
-            </RankingItemContainer>
-
-            <RankingItemContainer>
-              <RankingTitle>Defense Scaling</RankingTitle>
-              <ResultTitle>{resultRanking?.defBuild}</ResultTitle>
-            </RankingItemContainer>
-
-            <RankingItemContainer>
-              <RankingTitle>HP Scaling</RankingTitle>
-              <ResultTitle>{resultRanking?.hpBuild}</ResultTitle>
-            </RankingItemContainer>
-
-            <RankingItemContainer>
-              <RankingTitle>Elemental Mastery</RankingTitle>
-              <ResultTitle>{resultRanking?.emBuild}</ResultTitle>
-            </RankingItemContainer>
-          </RankingContainer>
-        )}
-      </Container>
       <Modal visible={open}>
         <ModalSelect {...modalInfo[option]} closeSelect={closeSelect} />
       </Modal>

@@ -53,29 +53,3 @@ export const ValueContainer = styled.View`
   justify-content: space-between;
 `
 
-export const RankingContainer = styled.View`
-display: flex;
-flex-wrap: wrap;
-flex-direction: row;
-justify-content: space-between;
-width: 100%;
-
-`
-
-export const RankingItemContainer = styled.View`
-width: 40%;
-`
-
-export const RankingTitle = styled.Text`
-  color: ${({ theme }) => theme.colors.secondary};
-  font-size: ${RFValue(15)}px;
-  font-weight: bold;
-  margin: 20px 0 5px;
-`
-
-export const ResultTitle = styled.Text`
-  color: ${({ theme }) => theme.colors.secondary};
-  font-size: ${RFValue(50)}px;
-  margin: 20px 0 5px;
-`
-

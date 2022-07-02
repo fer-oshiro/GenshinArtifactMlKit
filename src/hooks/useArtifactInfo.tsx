@@ -224,7 +224,7 @@ function getRanking(
   return score
 }
 
-type RankingProps = {
+export type RankingProps = {
   critBuild: string
   erBuild: string
   defBuild: string
