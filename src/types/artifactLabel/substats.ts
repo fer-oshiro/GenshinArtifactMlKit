@@ -1,6 +1,6 @@
 import { SubstatKey } from "../artifact";
 
-export const substats: SubstatsProps[] = [
+export const substats: SubstatsType[] = [
   {id: "hp", label: "HP"},
   {id: "hp_", label: "HP%"},
   {id: "atk", label: "ATK"},
@@ -13,7 +13,7 @@ export const substats: SubstatsProps[] = [
   {id: "critDMG_", label: "CRIT DMG %"},
 ];
 
-export type SubstatsProps = {
+export type SubstatsType = {
   id: SubstatKey,
   label: string 
 }

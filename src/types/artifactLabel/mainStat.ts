@@ -1,6 +1,6 @@
 import { MainStatKey } from './../artifact';
 
-export const allMainStat: MainStatsProps[] = [
+export const allMainStat: MainStatsType[] = [
   {id: 'hp', label: 'HP'},
   {id: 'hp_', label: 'HP%'},
   {id: 'atk', label: 'ATK'},
@@ -21,7 +21,7 @@ export const allMainStat: MainStatsProps[] = [
 ]
 
 
-export type MainStatsProps = {
+export type MainStatsType = {
   id: MainStatKey
   label: string
 }

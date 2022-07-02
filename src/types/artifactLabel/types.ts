@@ -1,6 +1,6 @@
 import { ArtifactSetKey } from './../consts';
 
-export const allArtifactSets: ArtifactSetsProps[] = [
+export const allArtifactSets: ArtifactSetsType[] = [
   { id: 'Icebreaker', label: 'Icebreaker' },
   { id: 'ArchaicPetra', label: 'Archaic Petra' },
   { id: 'BlizzardStrayer', label: 'Blizzard Strayer' },
@@ -27,7 +27,7 @@ export const allArtifactSets: ArtifactSetsProps[] = [
 ]
 
 
-export type ArtifactSetsProps = {
+export type ArtifactSetsType = {
   id: ArtifactSetKey
   label: string
 }

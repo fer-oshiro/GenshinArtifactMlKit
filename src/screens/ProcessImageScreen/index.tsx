@@ -7,6 +7,7 @@ import {
 import { recognizeImage, Response } from '../../mlkit'
 import { ResponseRenderer } from '../../components/ResponseRenderer'
 import { Loading, StyledView, ContainerView } from './styles'
+import { ArtifactProvider } from '../../hooks/useArtifactInfo'
 
 interface ProcessImageScreenProps {
   navigation: ProcessImageNavigationProps
@@ -45,6 +46,7 @@ export const ProcessImageScreen = ({ route }: ProcessImageScreenProps) => {
 
   return (
     <StyledView>
+      <ArtifactProvider>
       {!!response ? (
         <ContainerView>
           <Image
@@ -64,6 +66,7 @@ export const ProcessImageScreen = ({ route }: ProcessImageScreenProps) => {
       ) : (
         <Loading />
       )}
+      </ArtifactProvider>
     </StyledView>
   )
 }
