@@ -25,13 +25,13 @@ export const SubstatsContainer = styled.View`
 `
 
 export const Title = styled.Text`
-  color: ${({ theme }) => theme.colors.secondary};
+  color: ${({ theme }) => theme.colors.background};
   font-size: ${RFValue(15)}px;
   margin: 10px 0;
 `
 
 export const MainTitle = styled.Text`
-  color: ${({ theme }) => theme.colors.secondary};
+  color: ${({ theme }) => theme.colors.main_lighter};
   font-size: 40px;
   font-weight: bold;
   width: 100%;
@@ -39,7 +39,7 @@ export const MainTitle = styled.Text`
 `
 
 export const SubstatsTitle = styled.Text`
-  color: ${({ theme }) => theme.colors.secondary};
+  color: ${({ theme }) => theme.colors.main_lighter};
   font-size: 40px;
   font-weight: bold;
   width: 100%;
