@@ -1,20 +1,19 @@
-import React from 'react';
-import { ButtonContainer, Text } from './styles';
+import React from 'react'
+import { ButtonContainer, Text, Loading } from './styles'
 
 interface Props {
-  onPress: () => void;
+  onPress: () => void
+  isLoading?: boolean
 }
 
 export function Button({
   onPress,
-  children
+  isLoading,
+  children,
 }: React.PropsWithChildren<Props>) {
   return (
     <ButtonContainer onPress={onPress}>
-      <Text>
-        {children}
-      </Text>
+      {isLoading ? <Loading /> : <Text>{children}</Text>}
     </ButtonContainer>
-  );
+  )
 }
-

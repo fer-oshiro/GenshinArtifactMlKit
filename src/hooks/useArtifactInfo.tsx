@@ -124,7 +124,7 @@ function getArtifactSubstats(text: string) {
       if (similarityValue > prevSim) {
         return {
           sim: similarityValue,
-          id: cur.id,
+          id: cur.key,
           value: 0,
           label: cur.label,
         }
@@ -180,10 +180,10 @@ function getRanking(
     allStats.reduce((prev, curr) => {
       const simple = ['critDMG_', type]
       if (curr) {
-        if (simple.includes(curr.id)) {
+        if (simple.includes(curr.key)) {
           return prev + (curr.value || 0)
         }
-        if (curr.id === 'critRate_') {
+        if (curr.key === 'critRate_') {
           return prev + (curr.value || 0) * 2
         }
       }
@@ -307,36 +307,36 @@ export const ArtifactProvider = ({ children }: ArtifactProviderProps) => {
     const critBuild = getRanking(
       'atk_',
       allStats,
-      artifactslot.id,
-      artifactstats.id,
+      artifactslot.key,
+      artifactstats.key,
       isMax
     )
     const erBuild = getRanking(
       'enerRech_',
       allStats,
-      artifactslot.id,
-      artifactstats.id,
+      artifactslot.key,
+      artifactstats.key,
       isMax
     )
     const defBuild = getRanking(
       'def_',
       allStats,
-      artifactslot.id,
-      artifactstats.id,
+      artifactslot.key,
+      artifactstats.key,
       isMax
     )
     const hpBuild = getRanking(
       'hp_',
       allStats,
-      artifactslot.id,
-      artifactstats.id,
+      artifactslot.key,
+      artifactstats.key,
       isMax
     )
     const emBuild = getRanking(
       'eleMas',
       allStats,
-      artifactslot.id,
-      artifactstats.id,
+      artifactslot.key,
+      artifactstats.key,
       isMax
     )
 

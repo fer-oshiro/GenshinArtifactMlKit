@@ -10,7 +10,6 @@ interface CounterState {
 const initialState: CounterState = {
   value: 0,
   text: 'string'
-
 }
 
 const contador = createSlice({

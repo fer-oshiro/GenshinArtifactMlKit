@@ -44,8 +44,10 @@ export type ProcessImageRouteProps = RouteProp<
 export const Navigator = () => (
   <Stack.Navigator
     screenOptions={{
-      headerBackTitleVisible: false,
+      headerBackTitleVisible: true,
       headerTintColor: 'black',
+      gestureEnabled: false,
+      animationEnabled: false,
     }}
   >
     <Stack.Screen name={routes.MAIN_SCREEN} component={Inventory} />

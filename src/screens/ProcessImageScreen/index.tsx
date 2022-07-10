@@ -9,7 +9,6 @@ import { ResponseRenderer } from '../../components/ResponseRenderer'
 import { Loading, StyledView, ContainerView } from './styles'
 import { ArtifactProvider } from '../../hooks/useArtifactInfo'
 import Score from '../../components/Score'
-import { Button } from '../../components/ui'
 
 interface ProcessImageScreenProps {
   navigation: ProcessImageNavigationProps
@@ -60,7 +59,6 @@ export const ProcessImageScreen = ({ route }: ProcessImageScreenProps) => {
             resizeMode="cover"
           />
           <ResponseRenderer
-            response={response}
             text={text}
             scale={windowWidth / response.width}
           />

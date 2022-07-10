@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { Modal } from 'react-native'
 
 import { useArtifactInfo } from '../../hooks/useArtifactInfo'
+import { useAppDispatch, useAppSelector } from '../../store/hooks'
+import { editData, editSubstats } from '../../store/reducer/artifact'
 
 import {
   allMainStat,
   slotKey,
   substats,
   allArtifactSets,
-  SlotKeyType,
 } from '../../types/artifactLabel'
 
 import { ModalSelect } from '../ModalSelect'
@@ -24,137 +25,148 @@ import {
   ValueContainer,
 } from './styles'
 
-interface ResponseRendererProps {
-  text: string[]
-}
-
 type OptionType =
   | 'set'
   | 'slot'
-  | 'mainStats'
-  | 'firstStats'
-  | 'secondStats'
-  | 'thirdStats'
-  | 'fourthStats'
+  | 'mainStat'
+  | 'firstSubStats'
+  | 'secondSubStats'
+  | 'thirdSubStats'
+  | 'fourthSubStats'
 
-export const ResponseRenderer = ({ text }: ResponseRendererProps) => {
+type SelectType = { key: string; label: string }
+
+const substatsIndex = {
+  firstSubStats: 0,
+  secondSubStats: 1,
+  thirdSubStats: 2,
+  fourthSubStats: 3,
+}
+
+const defaultSubstats = {
+  options: substats,
+  title: 'Select Artifact Substats',
+}
+
+const modalInfo = {
+  set: {
+    options: allArtifactSets,
+    title: 'Select Artifact Set',
+  },
+  slot: {
+    options: slotKey,
+    title: 'Select Artifact Slot',
+  },
+  mainStat: {
+    options: allMainStat,
+    title: 'Select Artifact Main Stats',
+  },
+  firstSubStats: {
+    ...defaultSubstats,
+  },
+  secondSubStats: {
+    ...defaultSubstats,
+  },
+  thirdSubStats: {
+    ...defaultSubstats,
+  },
+  fourthSubStats: {
+    ...defaultSubstats,
+  },
+}
+
+export const ResponseRenderer = () => {
   const {
-    getResponse,
     handleRankingCalc,
-    setArtifactSet,
-    setArtifactSlot,
-    setArtifactStats,
     setLevel,
     setFirstStats,
     setSecondStats,
     setThirdStats,
     setFourthStats,
-    result,
   } = useArtifactInfo()
+
+  const data = useAppSelector(state => state.artifact.data)
+  const dispatch = useAppDispatch()
 
   const [open, setOpen] = useState(false)
   const [option, setOption] = useState<OptionType>('set')
+  const [select, setSelect] = useState({ key: '', label: '' })
 
   function closeSelect() {
     setOpen(false)
+    changeValues()
   }
 
   function handleComponent(type: any) {
     setOption(type)
     setOpen(true)
+    if (type.endsWith('SubStats')) {
+      setSelect(data?.substats[substatsIndex[option]] || { key: '', label: '' })
+    } else {
+      setSelect(data[type] || { key: '', label: '' })
+    }
   }
 
-  const defaultSubstats = {
-    options: substats,
-    title: 'Select Artifact Substats',
+  function changeValues() {
+    if (option.endsWith('SubStats')) {
+      const prevValue = data?.substats[substatsIndex[option]]?.value
+      dispatch(
+        editSubstats({
+          value: { value: prevValue, select },
+          substatsIndex: substatsIndex[option],
+        })
+      )
+    } else {
+      dispatch(editData({ key: option, value: select }))
+    }
   }
 
-  const modalInfo = {
-    set: {
-      defaultValue: result?.artifactset,
-      options: allArtifactSets,
-      title: 'Select Artifact Set',
-      setValue: (item: ArtifactSetsProps) => setArtifactSet(item),
-    },
-    slot: {
-      defaultValue: result?.artifactslot,
-      options: slotKey,
-      title: 'Select Artifact Slot',
-      setValue: (item: SlotKeyType) => setArtifactSlot(item),
-    },
-    mainStats: {
-      defaultValue: result?.artifactstats,
-      options: allMainStat,
-      title: 'Select Artifact Main Stats',
-      setValue: (item: MainStatsProps) => setArtifactStats(item),
-    },
-    firstStats: {
-      ...defaultSubstats,
-      defaultValue: result?.firstStats,
-      setValue: (item: SubstatsProps) =>
-        setFirstStats(prevStatus => {
-          return { ...item, value: prevStatus.value }
-        }),
-    },
-    secondStats: {
-      ...defaultSubstats,
-      defaultValue: result?.secondStats,
-      setValue: (item: SubstatsProps) =>
-        setSecondStats(prevStatus => {
-          return { ...item, value: prevStatus.value }
-        }),
-    },
-    thirdStats: {
-      ...defaultSubstats,
-      defaultValue: result?.thirdStats,
-      setValue: (item: SubstatsProps) =>
-        setThirdStats(prevStatus => {
-          return { ...item, value: prevStatus.value }
-        }),
-    },
-    fourthStats: {
-      ...defaultSubstats,
-      defaultValue: result?.fourthStats,
-      setValue: (item: SubstatsProps) =>
-        setFourthStats(prevStatus => {
-          return { ...item, value: prevStatus.value }
-        }),
-    },
+  function changeSubstatsValues(value: string) {
+    if (option.endsWith('SubStats')) {
+      const prevValue = data?.substats[substatsIndex[option]]
+      dispatch(
+        editSubstats({
+          value: { ...prevValue, value },
+          substatsIndex: substatsIndex[option],
+        })
+      )
+    }
   }
 
-  useEffect(() => {
-    getResponse(text)
-  }, [text])
-
+  const updateValue = e => {
+    e.preventDefault();
+    console.log(e.target.value)
+  }
   return (
     <Container>
       <MainTitle>Main</MainTitle>
       <ItemContainer>
         <Title>Artefato</Title>
         <Select
-          title={result?.artifactset?.label}
+          title={data?.set?.label || ''}
           onPress={() => handleComponent('set')}
         />
       </ItemContainer>
       <ItemContainer>
         <Title>Slot</Title>
         <Select
-          title={result?.artifactslot?.label}
+          title={data?.slot?.label || ''}
           onPress={() => handleComponent('slot')}
         />
       </ItemContainer>
       <ItemContainer>
         <Title>Main Stats</Title>
         <Select
-          title={result?.artifactstats?.label}
-          onPress={() => handleComponent('mainStats')}
+          title={data?.mainStat?.label || ''}
+          onPress={() => handleComponent('mainStat')}
         />
       </ItemContainer>
       <ItemContainer>
         <Title>Level</Title>
         <Input
-          defaultValue={result?.level.toFixed(0)}
-          onChangeText={text => setLevel(parseFloat(text))}
+          key="level"
+          defaultValue={data?.level}
+          onChange={text => setLevel(parseFloat(text))}
         />
       </ItemContainer>
 
@@ -163,11 +175,11 @@ export const ResponseRenderer = ({ text }: ResponseRendererProps) => {
         <ItemContainer>
           <ValueContainer>
             <Select
-              title={result?.firstStats?.label}
-              onPress={() => handleComponent('firstStats')}
+              title={data?.substats?.[0]?.label || ''}
+              onPress={() => handleComponent('firstSubStats')}
             />
             <Input
-              defaultValue={result?.firstStats?.value.toString()}
+              defaultValue={data?.substats?.[0]?.value}
               onChangeText={text =>
                 setFirstStats(prevState => {
                   return { ...prevState, value: text }
@@ -180,11 +192,11 @@ export const ResponseRenderer = ({ text }: ResponseRendererProps) => {
         <ItemContainer>
           <ValueContainer>
             <Select
-              title={result?.secondStats?.label}
-              onPress={() => handleComponent('secondStats')}
+              title={data?.substats?.[1]?.label || ''}
+              onPress={() => handleComponent('secondSubStats')}
             />
             <Input
-              value={result?.secondStats?.value.toString()}
+              value={data?.substats?.[1]?.value}
               onChangeText={text =>
                 setSecondStats(prevState => {
                   return { ...prevState, value: text }
@@ -197,11 +209,11 @@ export const ResponseRenderer = ({ text }: ResponseRendererProps) => {
         <ItemContainer>
           <ValueContainer>
             <Select
-              title={result?.thirdStats?.label}
-              onPress={() => handleComponent('thirdStats')}
+              title={data?.substats?.[2]?.label || ''}
+              onPress={() => handleComponent('thirdSubStats')}
             />
             <Input
-              defaultValue={result?.thirdStats?.value.toString()}
+              defaultValue={data?.substats?.[2]?.value}
               onChangeText={text =>
                 setThirdStats(prevState => {
                   return { ...prevState, value: text }
@@ -214,11 +226,11 @@ export const ResponseRenderer = ({ text }: ResponseRendererProps) => {
         <ItemContainer>
           <ValueContainer>
             <Select
-              title={result?.fourthStats?.label}
-              onPress={() => handleComponent('fourthStats')}
+              title={data?.substats?.[3]?.label || ''}
+              onPress={() => handleComponent('fourthSubStats')}
             />
             <Input
-              defaultValue={result?.fourthStats?.value.toString()}
+              defaultValue={data?.substats?.[3]?.value}
               onChangeText={text =>
                 setFourthStats(prevState => {
                   return { ...prevState, value: text }
@@ -231,8 +243,13 @@ export const ResponseRenderer = ({ text }: ResponseRendererProps) => {
 
       <Button onPress={handleRankingCalc}>Calcular e Salvar</Button>
 
-      <Modal visible={open}>
-        <ModalSelect {...modalInfo[option]} closeSelect={closeSelect} />
+      <Modal visible={open} transparent={false} animationType="slide">
+        <ModalSelect
+          {...modalInfo[option]}
+          setValue={(value: SelectType) => setSelect(value)}
+          closeSelect={closeSelect}
+          value={select}
+        />
       </Modal>
     </Container>
   )

@@ -2,28 +2,28 @@ import { SlotKey } from "../consts"
 
 export const slotKey: SlotKeyType[] = [
   {
-    id: 'flower',
+    key: 'flower',
     label: 'Flower of Life'
   },
   {
-    id: 'plume',
+    key: 'plume',
     label: 'Plume of Death'
   },
   {
-    id: 'sands',
+    key: 'sands',
     label: 'Sands of Eon'
   },
   {
-    id: 'goblet',
+    key: 'goblet',
     label: 'Goblet of Eonothem'
   },
   {
-    id: 'circlet',
+    key: 'circlet',
     label: 'Circlet of Logos'
   }
 ]
 
 export type SlotKeyType = {
-  id: SlotKey
+  key: SlotKey
   label: string
 }

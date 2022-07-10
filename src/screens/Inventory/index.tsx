@@ -5,6 +5,7 @@ import {
   Image,
   StyleSheet,
   useWindowDimensions,
+  TextInput,
 } from 'react-native'
 import { ImageButton, Button } from '../../components/ui'
 import * as ImagePicker from 'react-native-image-picker'
@@ -49,6 +50,9 @@ export const Inventory = ({ navigation }: SelectImageScreenProps) => {
           })
         }
         name="plus-circle"
+      />
+      <TextInput
+        style={{ width: '100%', borderColor: `black`, borderWidth: 2 }}
       />
     </Container>
   )

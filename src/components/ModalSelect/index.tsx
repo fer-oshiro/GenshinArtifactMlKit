@@ -4,13 +4,13 @@ import { Button } from '../../components/ui'
 import { Container, Header, ItemContainer, ItemTitle, Separator, Title } from './styles'
 
 interface ItemProps {
-  id: string
+  key: string
   label: string
 }
 
 interface Props {
   options: ItemProps[]
-  defaultValue: ItemProps
+  value: ItemProps
   setValue: (item: any) => void
   closeSelect: () => void
   title: string
@@ -18,7 +18,7 @@ interface Props {
 
 export function ModalSelect({
   options,
-  defaultValue,
+  value,
   setValue,
   title,
   closeSelect,
@@ -32,10 +32,10 @@ export function ModalSelect({
         <FlatList
           data={options}
           style={{ flex: 1, width: '100%' }}
-          keyExtractor={item => item.id}
+          keyExtractor={item => item.key}
           renderItem={({ item }) => {
             return (
-            <ItemContainer onPress={() => setValue(item)} isActive={defaultValue.id === item.id}>
+            <ItemContainer onPress={() => setValue(item)} isActive={value.key === item.key}>
               <ItemTitle>{item.label}</ItemTitle>
             </ItemContainer>
           )}}

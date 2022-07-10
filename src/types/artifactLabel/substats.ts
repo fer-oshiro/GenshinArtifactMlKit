@@ -1,19 +1,19 @@
 import { SubstatKey } from "../artifact";
 
 export const substats: SubstatsType[] = [
-  {id: "hp", label: "HP"},
-  {id: "hp_", label: "HP%"},
-  {id: "atk", label: "ATK"},
-  {id: "atk_", label: "ATK%"},
-  {id: "def", label: "DEF"},
-  {id: "def_", label: "DEF%"},
-  {id: "eleMas", label: "Elemental Mastery"},
-  {id: "enerRech_", label: "Energy Recharge %"},
-  {id: "critRate_", label: "CRIT Rate %"},
-  {id: "critDMG_", label: "CRIT DMG %"},
+  {key: "hp", label: "HP"},
+  {key: "hp_", label: "HP%"},
+  {key: "atk", label: "ATK"},
+  {key: "atk_", label: "ATK%"},
+  {key: "def", label: "DEF"},
+  {key: "def_", label: "DEF%"},
+  {key: "eleMas", label: "Elemental Mastery"},
+  {key: "enerRech_", label: "Energy Recharge %"},
+  {key: "critRate_", label: "CRIT Rate %"},
+  {key: "critDMG_", label: "CRIT DMG %"},
 ];
 
 export type SubstatsType = {
-  id: SubstatKey,
+  key: SubstatKey,
   label: string 
 }

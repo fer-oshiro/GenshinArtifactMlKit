@@ -15,3 +15,10 @@ export const Text = styled.Text`
 color:${({theme}) => theme.colors.background};
 margin: auto;
 `
+
+export const Loading = styled.ActivityIndicator.attrs(({ theme }) => ({
+  size: 'large',
+  color: theme.colors.main,
+}))`
+  padding: 50px;
+`
