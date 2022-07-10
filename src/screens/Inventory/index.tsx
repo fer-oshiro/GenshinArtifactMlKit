@@ -1,20 +1,12 @@
 import React, { useState } from 'react'
-import {
-  View,
-  SafeAreaView,
-  Image,
-  StyleSheet,
-  useWindowDimensions,
-  TextInput,
-} from 'react-native'
-import { ImageButton, Button } from '../../components/ui'
-import * as ImagePicker from 'react-native-image-picker'
-import { ImagePickerResponse } from 'react-native-image-picker/src/types'
+
+import { ImageButton } from '../../components/ui'
 import { SelectScreenNavigationProps } from '../../navigation/Navigator'
 
 import * as routes from '../../navigation/routes'
 import { Container } from './styles'
 import { IconButton } from '../../components/ui/IconButton'
+import { TextInput } from 'react-native-gesture-handler'
 
 type SelectImageScreenProps = {
   navigation: SelectScreenNavigationProps
